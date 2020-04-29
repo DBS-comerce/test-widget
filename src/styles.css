@@ -24,6 +24,8 @@
   text-decoration: none;
   color: #63acf8;
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .rssapp-card-title-container {

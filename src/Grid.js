@@ -32,8 +32,8 @@ function Grid() {
   const presets = {
     firstType: {
       containerStyles: {
-        gridTemplateColumns: "repeat(5, 1fr)",
-        gridTemplateRows: "repeat(3, 1fr)",
+        gridTemplateColumns: "repeat(5, 200px)",
+        gridTemplateRows: "repeat(3, 200px)",
         gridGap: "20px",
       },
       gridAreas: {
