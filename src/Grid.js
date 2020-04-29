@@ -39,19 +39,17 @@ function Grid() {
       gridAreas: {
         "1": { gridArea: "1 / 1 / 4 / 4" },
       },
-      largeCardNumbers: [1],
     },
     secondType: {
       containerStyles: {
-        gridTemplateColumns: "repeat(5, 0.5fr)",
-        gridTemplateRows: "repeat(3, 1fr)",
+        gridTemplateColumns: "repeat(5, 200px)",
+        gridTemplateRows: "repeat(3, 200px)",
         gridGap: "20px",
       },
       gridAreas: {
         "1": { gridArea: "1 / 1 / 3 / 3" },
         "2": { gridArea: "1 / 3 / 3 / 6" },
       },
-      largeCardNumbers: [1, 2, 3, 4, 5, 6, 7],
     },
   };
 
