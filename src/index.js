@@ -1,11 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Grid from "./Grid";
-import retargetEvents from "react-shadow-dom-retarget-events";
 
 class RssApp extends HTMLElement {
   connectedCallback() {
-    retargetEvents(this);
     const mountPoint = document.createElement("span");
     this.attachShadow({ mode: "open" }).appendChild(mountPoint);
 

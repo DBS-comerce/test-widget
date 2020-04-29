@@ -60,7 +60,12 @@ function Grid() {
     ...presets[gridType],
   };
   const cards = items.map((item, index) => (
-    <CardItem settings={settings} item={item} number={(index += 1)} />
+    <CardItem
+      key={item.url}
+      settings={settings}
+      item={item}
+      number={(index += 1)}
+    />
   ));
 
   return (
