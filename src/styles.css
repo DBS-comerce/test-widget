@@ -44,9 +44,8 @@
 
 .rssapp-card-title-description {
   text-align: left;
-  height: 35px;
   overflow: hidden;
-  padding: 0px 20px 2px 20px;
+  padding: 6px 20px 6px 20px;
   color: gray;
 }
 

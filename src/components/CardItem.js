@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 function CardItem({ number, item, settings }) {
+  const MAX_CARD_WIDTH = 220;
   const { gridAreas } = settings;
 
   const [isLarge, setIsLarge] = useState(false);
@@ -8,7 +9,7 @@ function CardItem({ number, item, settings }) {
   const refContainer = useRef();
   useEffect(() => {
     console.log(refContainer.current.offsetWidth);
-    if (refContainer.current.offsetWidth > 220) {
+    if (refContainer.current.offsetWidth > MAX_CARD_WIDTH) {
       setIsLarge(true);
     }
   }, []);
@@ -19,7 +20,7 @@ function CardItem({ number, item, settings }) {
       className={`rssapp-card card-${number}`}
       style={gridAreas[number]}
     >
-      {isLarge ? (
+      {/* {isLarge ? (
         <img
           alt="news-img"
           className="rssapp-card-img"
@@ -27,19 +28,21 @@ function CardItem({ number, item, settings }) {
             "https://cdn.pixabay.com/photo/2019/10/06/10/03/team-4529717_960_720.jpg"
           }
         ></img>
-      ) : null}
+      ) : null} */}
 
       <div className="rssapp-card-author">
         <a className="rssapp-card-author-link" href={item.url}>
           {item.author}
         </a>
         {isLarge ? (
-          <div className="rssapp-card-info">6h ago, 3m read</div>
+          <div className="rssapp-card-info">6h ago • 3m read</div>
         ) : null}
       </div>
       <div className="rssapp-card-title-container">{item.title}</div>
       {isLarge ? (
-        <div className="rssapp-card-title-description">{item.description}</div>
+        <div className="rssapp-card-title-description">
+          <div dangerouslySetInnerHTML={{ __html: item.description }} />
+        </div>
       ) : null}
     </div>
   );
