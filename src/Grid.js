@@ -17,11 +17,17 @@ function Grid() {
   const refContainer = useRef();
 
   useEffect(() => {
-    console.log(refContainer.current.clientWidth);
-
     if (refContainer.current.clientWidth < MAX_CLIENT_WIDTH) {
       setIsSmallContainer(true);
     }
+    window.addEventListener("resize", () => {
+      if (refContainer.current.clientWidth < MAX_CLIENT_WIDTH) {
+        setIsSmallContainer(true);
+      } else {
+        setIsSmallContainer(false);
+      }
+    });
+
     fetch("https://rss.app/feeds/_fc23s6Ew1ptRupYY.json")
       .then((res) => res.json())
       .then(

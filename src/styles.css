@@ -49,6 +49,7 @@
 .rssapp-card-description {
   text-align: left;
   overflow: hidden;
+  font-size: 14px;
   padding: 6px 20px 6px 20px;
   color: gray;
 }
@@ -56,6 +57,8 @@
 .rssapp-card-info {
   font-weight: bold;
   padding-left: 20px;
+  padding-bottom: 4px;
   color: gray;
   font-size: 12px;
+  text-align: left;
 }
