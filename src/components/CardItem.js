@@ -2,17 +2,17 @@ import React, { useEffect, useState, useRef } from "react";
 
 function CardItem({ number, item, settings }) {
   const MAX_CARD_WIDTH = 220;
-  const { gridAreas } = settings;
 
   const [isLarge, setIsLarge] = useState(false);
 
   const refContainer = useRef();
   useEffect(() => {
-    console.log(refContainer.current.offsetWidth);
     if (refContainer.current.offsetWidth > MAX_CARD_WIDTH) {
       setIsLarge(true);
     }
   }, []);
+
+  const { generalSettings, titleSettings, cardSettings, gridAreas } = settings;
 
   return (
     <div
@@ -38,9 +38,17 @@ function CardItem({ number, item, settings }) {
           <div className="rssapp-card-info">6h ago • 3m read</div>
         ) : null}
       </div>
-      <div className="rssapp-card-title-container">{item.title}</div>
+      <div
+        className="rssapp-card-title-container"
+        style={{
+          color: cardSettings.cardTitleColor,
+          fontSize: cardSettings.cardTitleFontSize,
+        }}
+      >
+        {item.title}
+      </div>
       {isLarge ? (
-        <div className="rssapp-card-title-description">
+        <div className="rssapp-card-description">
           <div dangerouslySetInnerHTML={{ __html: item.description }} />
         </div>
       ) : null}

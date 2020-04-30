@@ -5,7 +5,7 @@ import CardItem from "./components/CardItem";
 import customSettings from "./settings";
 
 function Grid() {
-  const ITEMS_COUNT = 15;
+  const ITEMS_COUNT = 10;
   const MAX_CLIENT_WIDTH = 600;
 
   const [error, setError] = useState(null);
@@ -66,17 +66,18 @@ function Grid() {
     },
     thirdType: {
       containerStyles: {
-        gridTemplateColumns: "repeat(4, 200px)",
-        gridGap: "20px",
+        gridTemplateColumns: "repeat(4, 1rf)",
+        gridGap: "10px",
       },
       gridAreas: isSmallContainer
         ? {}
         : {
-            "1": { gridArea: "2 / 1 / 5 / 3" },
+            "1": { gridArea: "1 / 2 / 1/ 4" },
           },
     },
   };
 
+  const { cardSettings } = customSettings;
   const settings = {
     ...customSettings,
     ...presets[gridType],
@@ -89,13 +90,17 @@ function Grid() {
       number={(index += 1)}
     />
   ));
+
   return (
     <Style>
       {styles.toString()}
       <div
         ref={refContainer}
         className="rssapp-container"
-        style={settings.containerStyles}
+        style={{
+          ...settings.containerStyles,
+          backgroundColor: cardSettings.backgroundColor,
+        }}
       >
         {cards}
       </div>

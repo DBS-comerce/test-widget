@@ -24,12 +24,16 @@
   font-weight: bold;
 }
 
+.rssapp-card-author-link:hover {
+  color: #63abf8af;
+}
+
 .rssapp-card-title-container {
   height: 35px;
   overflow: hidden;
   text-align: left;
   font-weight: bold;
-  padding: 0px 20px 2px 20px;
+  padding: 4px 20px 4px 20px;
 }
 
 .rssapp-card {
@@ -42,7 +46,7 @@
   height: 100%;
 }
 
-.rssapp-card-title-description {
+.rssapp-card-description {
   text-align: left;
   overflow: hidden;
   padding: 6px 20px 6px 20px;
@@ -53,5 +57,5 @@
   font-weight: bold;
   padding-left: 20px;
   color: gray;
-  font-size: 14px;
+  font-size: 12px;
 }
